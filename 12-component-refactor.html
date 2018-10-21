@@ -94,7 +94,7 @@ var ViewDynamic = createReactClass({
     return { currentRoom: 0 };
   },
 
-  componentDidMount() {
+  componentDidMount: function() {
     var component = this;
     var props = this.props;
 
@@ -107,7 +107,7 @@ var ViewDynamic = createReactClass({
     }, 1000);
   },
 
-  componentWillUnmount() {
+  componentWillUnmount: function() {
     clearInterval(this.interval);
   },
 
