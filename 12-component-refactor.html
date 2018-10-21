@@ -56,15 +56,17 @@ function ViewAfter(props) {
         var barStyle = {
           display: "inline-block",
           background: "lightgrey",
-          width: room.people * 25
+          width: room.people * 20
         };
+        var count = room.people;
         return (
           <div key={k}>
-            {room.people > 0 ? (
-              <span style={barStyle}>{room.people} People</span>
-            ) : (
-              <span>0 People</span>
-            )}
+            <span>{count < 10 ? 0 : ""}{count} People </span>
+            {
+              count > 0 
+                ? <span style={barStyle}>&nbsp;</span>
+                : <span></span>
+            }
             <span> in {room.name}</span>
           </div>
         );
